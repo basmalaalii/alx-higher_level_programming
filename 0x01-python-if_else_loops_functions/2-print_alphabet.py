@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for name in range(a,z):
-    print(name.lower())
+for i in range(ord('a'), ord('z') +1):
+    print("{:c}".format(i), emd="")
