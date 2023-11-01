@@ -1,2 +1,5 @@
 #!/usr/bin/python3
-for i in range(
+count = 0
+while count < 100:
+    print("{:d}, ".format(count), end=" ")
+    count += 1
