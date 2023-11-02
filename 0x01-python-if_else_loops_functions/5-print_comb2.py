@@ -1,7 +1,3 @@
 #!/usr/bin/python3
-count = 0
-while count < 99:
-    print("{:02d}, ".format(count), end=" ")
-    count += 1
-    if count == 99:
-        print("{:02d} ".format(count), end=" ")
+for i in range(100):
+    print("{:02d}".format(i), end="\n" if i == 99 else ", ")
