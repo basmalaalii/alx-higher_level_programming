@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def no_c(my_string):
   ret = ""  # Initialize the ret variable to an empty string.
   for i in range(len(my_string)):
