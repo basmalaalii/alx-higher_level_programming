@@ -19,9 +19,9 @@ class Student:
         try:
             for attr in attrs:
                 if type(attr) is not str:
-                    return seld.__dict__
+                    return self.__dict__
         except Exception:
-            return seld.__dict__
+            return self.__dict__
         my_dict = dict()
         for key, value in self.__dict__.items():
             if key in attrs:
