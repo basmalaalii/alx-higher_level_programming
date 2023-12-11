@@ -4,20 +4,19 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    '''A Rectangle calss.'''
-
+    '''A Rectangle class.'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''constructor'''
+        '''Constructor.'''
         super().__init__(id)
         self.width = width
-        self.hight = hight
+        self.height = height
         self.x = x
         self.y = y
 
     @property
     def width(self):
-        '''width of this rectangle.'''
+        '''Width of this rectangle.'''
         return self.__width
 
     @width.setter
@@ -66,19 +65,19 @@ class Rectangle(Base):
 
     def area(self):
         '''Computes area of this rectangle.'''
-        return self.width * self.hight
+        return self.width * self.height
 
     def display(self):
-        '''prints string representation of this rectangle.'''
+        '''Prints string representation of this rectangle.'''
         s = '\n' * self.y + \
             (' ' * self.x + '#' * self.width + '\n') * self.height
         print(s, end='')
 
     def __str__(self):
         '''Returns string info about this rectangle.'''
-        return '[{}] [{}] {}/{} - {}/{}'.\
+        return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width,
-                    self.height)
+                   self.height)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         '''Internal method that updates instance attributes via */**args.'''
@@ -100,3 +99,8 @@ class Rectangle(Base):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
+
+    def to_dictionary(self):
+        '''Returns dictionary representation of this class.'''
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
